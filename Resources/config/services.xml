@@ -11,9 +11,9 @@
        <import resource="services/listeners.xml"/>
    </imports>
     <services>
-        <service id="adevis_bundle_locale.installer.locale_installer" class="Miky\Bundle\LocaleBundle\Installer\LocaleInstaller">
-            <argument id="adevis_language_manager" type="service"/>
-            <!--<tag name="adevis.installer"/>-->
+        <service id="miky_bundle_locale.installer.locale_installer" class="Miky\Bundle\LocaleBundle\Installer\LocaleInstaller">
+            <argument id="miky_language_manager" type="service"/>
+            <!--<tag name="miky.installer"/>-->
         </service>
     </services>
 </container>

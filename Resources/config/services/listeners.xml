@@ -4,7 +4,7 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="adevis_bundle_locale.event_listener_doctrine.locale_subscriber" class="Miky\Bundle\LocaleBundle\EventListener\Doctrine\LocaleSubscriber">
+        <service id="miky_bundle_locale.event_listener_doctrine.locale_subscriber" class="Miky\Bundle\LocaleBundle\EventListener\Doctrine\LocaleSubscriber">
             <argument type="service" id="request_stack"/>
             <tag name="doctrine.event_subscriber"/>
         </service>

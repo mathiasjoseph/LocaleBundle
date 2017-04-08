@@ -6,7 +6,7 @@
 
 
     <services>
-        <service class="Miky\Bundle\LocaleBundle\Manager\LanguageManager" id="adevis_language_manager">
+        <service class="Miky\Bundle\LocaleBundle\Manager\LanguageManager" id="miky_language_manager">
             <argument id="doctrine.orm.entity_manager" type="service"/>
             <argument>%language.entity.class%</argument>
             <argument id="location.webservices.geo_list_provider" type="service"/>

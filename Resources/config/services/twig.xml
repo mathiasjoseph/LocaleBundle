@@ -6,7 +6,7 @@
 
 
     <services>
-       <service id="adevis_bundle_locale.twig.locale_extension"
+       <service id="miky_bundle_locale.twig.locale_extension"
         class="Miky\Bundle\LocaleBundle\Twig\LocaleExtension"
         public="false">
         <tag name="twig.extension" />
