@@ -45,13 +45,12 @@ class LanguageManager
      * @param ObjectManager $om
      * @param string $class
      */
-    public function __construct(ObjectManager $om, $class, GeoListProvider $geoListProvider, RequestStack $requestStack, $locales)
+    public function __construct(ObjectManager $om, $class, RequestStack $requestStack, $locales)
     {
         $this->objectManager = $om;
         $this->repository = $om->getRepository($class);
         $metadata = $om->getClassMetadata($class);
         $this->class = $metadata->getName();
-        $this->geoListProvider = $geoListProvider;
         $this->requestStack = $requestStack;
         $this->locales = $locales;
     }
