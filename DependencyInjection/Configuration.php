@@ -1,6 +1,6 @@
 <?php
 
-namespace Miky\Bundle\LanguageBundle\DependencyInjection;
+namespace Miky\Bundle\LocaleBundle\DependencyInjection;
 
 use Miky\Bundle\LocaleBundle\Doctrine\Entity\Language;
 use Miky\Bundle\LocationBundle\Doctrine\Entity\Continent;
