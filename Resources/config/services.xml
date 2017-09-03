@@ -6,6 +6,7 @@
 <imports>
     <import resource="services/manager.xml"/>
     <import resource="services/listener.xml"/>
+    <import resource="services/form.xml"/>
 </imports>
 
 </container>

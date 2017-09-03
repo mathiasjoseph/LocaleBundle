@@ -30,8 +30,12 @@ class MikyLocaleExtension extends AbstractCoreExtension implements PrependExtens
         $this->remapParametersNamespaces($config, $container, array(
             '' => array(
                 'language_class' => 'miky_locale.model.language.class',
+                'available_locales' => 'miky_locale.available_locales',
+                'default_locale' => 'miky_locale.default_locale',
             ),
         ));
+
+
     }
 
     public function prepend(ContainerBuilder $container)

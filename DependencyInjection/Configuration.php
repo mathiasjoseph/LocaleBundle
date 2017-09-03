@@ -33,6 +33,16 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('miky_locale');
+
+        $rootNode
+            ->children()
+            ->scalarNode('default_locale')->isRequired()->cannotBeEmpty()->end()
+            ->arrayNode('available_locales')
+            ->prototype('scalar')
+            ->cannotBeEmpty()
+            ->isRequired()
+            ->end()
+            ->end();
         if ($this->useDefaultEntities){
             $rootNode
                 ->children()
