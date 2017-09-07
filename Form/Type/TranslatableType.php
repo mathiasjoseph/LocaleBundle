@@ -71,9 +71,11 @@ class TranslatableType extends AbstractType
 
         switch ($options["required_type"]){
             case self::REQUIRED_BY_CURRENT_LOCALE :
+                $options["required"] = false;
                 $options[$this->currentLocale . '_options']['required'] = true;
                 break;
             case self::REQUIRED_BY_DEFAULT_LOCALE:
+                $options["required"] = false;
                 $options[$this->defaultLocale . '_options']["required"] = true;
                 break;
             case self::ALL_REQUIRED :
