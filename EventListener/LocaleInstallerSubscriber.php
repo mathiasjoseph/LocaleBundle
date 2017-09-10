@@ -12,8 +12,6 @@ namespace Miky\Bundle\LocaleBundle\EventListener;
 
 use Miky\Bundle\InstallerBundle\Event\InstallationEvent;
 use Miky\Bundle\InstallerBundle\MikyInstallerEvents;
-use Miky\Bundle\UserBundle\Doctrine\EmployeeManager;
-use Miky\Bundle\UserBundle\Doctrine\UserManager;
 use Miky\Bundle\LocaleBundle\Doctrine\LanguageManager;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 

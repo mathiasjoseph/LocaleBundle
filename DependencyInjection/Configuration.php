@@ -3,9 +3,6 @@
 namespace Miky\Bundle\LocaleBundle\DependencyInjection;
 
 use Miky\Bundle\LocaleBundle\Doctrine\Entity\Language;
-use Miky\Bundle\LocationBundle\Doctrine\Entity\Continent;
-use Miky\Bundle\LocationBundle\Doctrine\Entity\Country;
-use Miky\Bundle\LocationBundle\Doctrine\Entity\Location;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 

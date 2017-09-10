@@ -13,7 +13,6 @@ namespace Miky\Bundle\LocaleBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
-use Symfony\Component\Form\FormInterface;
 
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>

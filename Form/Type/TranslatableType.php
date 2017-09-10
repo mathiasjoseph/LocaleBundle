@@ -12,12 +12,9 @@
 namespace Miky\Bundle\LocaleBundle\Form\Type;
 
 
-use Miky\Bundle\LocaleBundle\Form\DataTransformer\ValueToTranslationTransformer;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\DataTransformer\ValueToDuplicatesTransformer;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormInterface;
