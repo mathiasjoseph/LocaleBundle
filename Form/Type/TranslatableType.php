@@ -95,6 +95,7 @@ class TranslatableType extends AbstractType
         $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
             $form = $event->getForm();
             $parentData = $form->getParent()->getData();
+            $parentData->setDefaultLocale($this->currentLocale);
 
             switch ($form->getConfig()->getOptions("required_type")){
                 case self::REQUIRED_BY_CURRENT_LOCALE :
