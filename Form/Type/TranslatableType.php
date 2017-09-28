@@ -67,7 +67,6 @@ class TranslatableType extends AbstractType
             $options['options']['error_bubbling'] = $options['error_bubbling'];
         }
 
-
         foreach ($this->locales as $locale) {
             $builder
                 ->add($options[$locale . '_name'], $options['type'], array_merge($options['options'], $options[$locale . '_options']));
@@ -78,21 +77,17 @@ class TranslatableType extends AbstractType
             /** @var Translatable $parentData */
             $parentData = $event->getForm()->getParent()->getData();
             foreach ($this->locales as $locale) {
-                $translation = $parentData->translate($locale);
-                $value = $this->accessor->getValue($translation, $form->getPropertyPath());
-                if (!empty($value) && $value != null && $value != "") {
+                $translation = $parentData->findTranslationByLocale($locale, false);
+                if ($translation != null) {
+                    $value = $this->accessor->getValue($translation, $form->getPropertyPath());
                     $form->get($locale)->setData($value);
-                }else{
-                    $parentData->removeTranslation($translation);
                 }
-
             }
+
         });
         $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
             $form = $event->getForm();
             $parentData = $form->getParent()->getData();
-            $parentData->setDefaultLocale($this->currentLocale);
-
             switch ($form->getConfig()->getOptions("required_type")){
                 case self::REQUIRED_BY_CURRENT_LOCALE :
                     $this->accessor->setValue($parentData, $form->getPropertyPath(), $form->get($this->currentLocale)->getData());
@@ -104,11 +99,9 @@ class TranslatableType extends AbstractType
 
             foreach ($this->locales as $locale) {
                 $v = $form->get($locale)->getData();
-                $translation = $parentData->translate($locale);
-                if (!empty($v) && $v != null && $v != "") {
-                    $this->accessor->setValue($translation, $form->getPropertyPath(), $v);
-                }else{
-                    $parentData->removeTranslation($translation);
+                if ($v != null) {
+                    $translation = $parentData->translate($locale, false);
+                   $this->accessor->setValue($translation, $form->getPropertyPath(), $v);
                 }
             }
             $parentData->mergeNewTranslations();
