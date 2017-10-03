@@ -120,12 +120,12 @@ class TranslatableType extends AbstractType
                 $options["required"] = false;
                 $options[$this->defaultLocale . '_options']["required"] = true;
                 break;
-            case self::ALL_REQUIRED :
-                $options["required"] = true;
-                break;
         }
         foreach ($this->locales as $locale) {
-            if (array_key_exists('required', $options[$locale . '_options']) && $options[$locale . '_options']['required'] == true){
+            if (self::ALL_REQUIRED  == $options["required_type"]){
+                $view->vars['required_options'][$locale] = true;
+            }
+            elseif (array_key_exists('required', $options[$locale . '_options']) && $options[$locale . '_options']['required'] == true){
                 $view->vars['required_options'][$locale] = $options[$locale . '_options']['required'];
             }else{
                 $view->vars['required_options'][$locale] = false;
