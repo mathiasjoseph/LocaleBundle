@@ -1,5 +1,0 @@
-miky_resource:
-    resources:
-        miky.language:
-            classes:
-                model: %miky_locale.model.language.class%
