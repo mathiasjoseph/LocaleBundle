@@ -77,7 +77,7 @@ class TranslatableType extends AbstractType
             /** @var Translatable $parentData */
             $parentData = $event->getForm()->getParent()->getData();
             foreach ($this->locales as $locale) {
-                $translation = $parentData->findTranslationByLocale($locale, false);
+                $translation = $parentData->getTranslations()->get($locale);
                 if ($translation != null) {
                     $value = $this->accessor->getValue($translation, $form->getPropertyPath());
                     $form->get($locale)->setData($value);
